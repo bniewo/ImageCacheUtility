@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Image Cache Utility" Height="700" Width="800" MinWidth="800" MinHeight="700">
     <Grid Margin="0,0,0,0">
-        <TabControl x:Name="MainWindowTabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-            <TabItem Header="Analyze">
+        <TabControl x:Name="MainWindowTabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="MainWindowTabControl_SelectionChanged" >
+            <TabItem x:Name="Analyze1" Header="Analyze" HorizontalAlignment="Left" Margin="-2,-2,0,0" Width="57">
                 <Grid Background="#FFE5E5E5">
                     <Label x:Name="ImageCachePathLabel" Content="Image Cache Path:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="ImageCachePathBox" HorizontalAlignment="Stretch" Height="23" Margin="118,13,98,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="_CachePathTextChanged"/>
@@ -29,7 +29,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="0 KB Files">
+            <TabItem x:Name="_0KB" Header="0 KB Files">
                 <Grid Background="#FFE5E5E5">
                     <CheckBox x:Name="ReturnFullPathCheckBox" Content="Full Path" HorizontalAlignment="Right" Margin="0,0,10,7" VerticalAlignment="Bottom" IsChecked="True" Checked="_Toggle0KBOutput" Unchecked="_Toggle0KBOutput" />
                     <ListView x:Name="Zero_KB_Files" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,30">
@@ -42,7 +42,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="Old Files">
+            <TabItem x:Name="OldFiles" Header="Old Files">
                 <Grid Background="#FFE5E5E5">
                     <Label x:Name="CountLabel" Content="Count:" HorizontalAlignment="Right" Margin="383,0,50,3" VerticalAlignment="Bottom"/>
                     <Label x:Name="CountValue" Content="0" HorizontalAlignment="Right" Margin="424,0,10,3" VerticalAlignment="Bottom"/>
